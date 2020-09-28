@@ -1,19 +1,22 @@
 {
-  "name": "conventional-changelog-angular",
-  "version": "5.0.11",
-  "description": "conventional-changelog angular preset",
+  "name": "conventional-release-notes",
+  "version": "1.0.0",
+  "description": "A conventional-changelog preset for efficient and descriptive release notes",
   "main": "index.js",
   "scripts": {
     "test-windows": "mocha --timeout 30000"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/conventional-changelog/conventional-changelog.git"
+    "url": "https://github.com/regalstreak/conventional-release-notes.git"
   },
   "keywords": [
     "conventional-changelog",
-    "angular",
-    "preset"
+    "conventional-commits",
+    "preset",
+    "semantic-release",
+    "release-notes",
+    "semantic-release-config"
   ],
   "files": [
     "conventional-changelog.js",
@@ -23,15 +26,15 @@
     "writer-opts.js",
     "templates"
   ],
-  "author": "Steve Mao",
+  "author": "Neil Agarwal",
   "engines": {
     "node": ">=10"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/conventional-changelog/conventional-changelog/issues"
+    "url": "https://github.com/regalstreak/conventional-release-notes/issues"
   },
-  "homepage": "https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular#readme",
+  "homepage": "https://github.com/regalstreak/conventional-release-notes/#readme",
   "dependencies": {
     "compare-func": "^2.0.0",
     "q": "^1.5.1"
