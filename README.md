@@ -1,48 +1,10 @@
-# [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url]
+# Conventional Release Notes
+A [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) preset for efficient and descriptive release notes
 
-> [conventional-changelog](https://github.com/ajoslin/conventional-changelog) [angular](https://github.com/angular/angular) preset
 
-**Issues with the convention itself should be reported on the Angular issue tracker.**
-
-## Angular Convention
-
-Angular's [commit message guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit).
-
-### Examples
-
-Appears under "Features" header, pencil subheader:
-
-```
-feat(pencil): add 'graphiteWidth' option
-```
-
-Appears under "Bug Fixes" header, graphite subheader, with a link to issue #28:
-
-```
-fix(graphite): stop graphite breaking when width < 0.1
-
-Closes #28
-```
-
-Appears under "Performance Improvements" header, and under "Breaking Changes" with the breaking change explanation:
-
-```
-perf(pencil): remove graphiteWidth option
-
-BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite width of 10mm is always used for performance reason.
-```
-
-The following commit and commit `667ecc1` do not appear in the changelog if they are under the same release. If not, the revert commit appears under the "Reverts" header.
-
-```
-revert: feat(pencil): add 'graphiteWidth' option
-
-This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
-```
-
-### Commit Message Format
-
-A commit message consists of a **header**, **body** and **footer**.  The header has a **type**, **scope** and **subject**:
+## Commit Message Format
+For generating proper release notes, the commit messages should follow the [conventional commits](https://www.conventionalcommits.org) spec.
+A commit message consists of a **header**, **body** and **footer**. The header has a **type**, **scope** and **subject**:
 
 ```
 <type>(<scope>): <subject>
@@ -52,6 +14,33 @@ A commit message consists of a **header**, **body** and **footer**.  The header 
 <footer>
 ```
 
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+Types include and are limited to:
+| Type | Version Bump | Description and used for |
+| :----: | :---: |-----------------------|
+| feat | minor | New features |
+| fix | patch | Fixing bugs |
+| revert | patch | Reverting commits |
+| perf | patch | Performance improvements |
+| refactor | patch | Refactoring code without changing functionality |
+| build | patch | Build-system changes (deps, webpack, etc.) |
+| chore | patch | General chores like version bump, merges, etc |
+| ci | patch | CI/CD related changes |
+| docs | none | Documentation |
+| test | none | Adding/improving tests |
+| style | none | Code-style, formatting, white-space, etc |
+
+
+* !: A commit that appends a `!` after the type/scope, introduces a breaking API change. A BREAKING CHANGE can be part of commits of any type and introduces a major version bump.
+* A scope of `norelease` with any commit message type will not bump a release version.
+
 The **header** is mandatory and the **scope** of the header is optional.
 
 ### Revert
@@ -60,7 +49,7 @@ If the commit reverts a previous commit, it should begin with `revert: `, follow
 
 ### Type
 
-If the prefix is `feat`, `fix` or `perf`, it will appear in the changelog. However if there is any [BREAKING CHANGE](#footer), the commit will always appear in the changelog.
+If the prefix is `feat`, `fix`, `perf`, `refactor`, `build` or any of the above types, it will appear in the changelog. However if there is any [BREAKING CHANGE](#footer), the commit will also appear in the release notes with a `Breaking Changes` header.
 
 Other prefixes are up to your discretion. Suggested prefixes are `build`, `ci`, `docs` ,`style`, `refactor`, and `test` for non-changelog related tasks.
 
@@ -68,16 +57,15 @@ Details regarding these types can be found in the official [Angular Contributing
 
 ### Scope
 
-The scope could be anything specifying place of the commit change. For example `$location`,
-`$browser`, `$compile`, `$rootScope`, `ngHref`, `ngClick`, `ngView`, etc...
+The scope could be anything specifying place or component of the commit change. 
 
 ### Subject
 
 The subject contains succinct description of the change:
 
-* use the imperative, present tense: "change" not "changed" nor "changes"
-* don't capitalize first letter
-* no dot (.) at the end
+- use the imperative, present tense: "change" not "changed" nor "changes"
+- don't capitalize first letter
+- no dot (.) at the end
 
 ### Body
 
@@ -92,12 +80,3 @@ reference GitHub issues that this commit **Closes**.
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
 
 A detailed explanation can be found in this [document](#commit-message-format).
-
-[npm-image]: https://badge.fury.io/js/conventional-changelog-angular.svg
-[npm-url]: https://npmjs.org/package/conventional-changelog-angular
-[travis-image]: https://travis-ci.org/conventional-changelog/conventional-changelog-angular.svg?branch=master
-[travis-url]: https://travis-ci.org/conventional-changelog/conventional-changelog-angular
-[daviddm-image]: https://david-dm.org/conventional-changelog/conventional-changelog-angular.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/conventional-changelog/conventional-changelog-angular
-[coveralls-image]: https://coveralls.io/repos/conventional-changelog/conventional-changelog-angular/badge.svg
-[coveralls-url]: https://coveralls.io/r/conventional-changelog/conventional-changelog-angular
