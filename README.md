@@ -53,7 +53,7 @@ If the prefix is `feat`, `fix`, `perf`, `refactor`, `build` or any of the above 
 
 Other prefixes are up to your discretion. Suggested prefixes are `build`, `ci`, `docs` ,`style`, `refactor`, and `test` for non-changelog related tasks.
 
-Details regarding these types can be found in the official [Angular Contributing Guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type).
+Details regarding these types can be found [here](https://github.com/regalstreak/conventional-release-notes#commit-message-format).
 
 ### Scope
 
