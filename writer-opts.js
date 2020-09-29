@@ -36,7 +36,11 @@ function getWriterOpts() {
         commit.type = "Bug Fixes";
       } else if (commit.type === "perf") {
         commit.type = "Performance Improvements";
-      } else if (commit.type === "revert" || commit.revert) {
+      } else if (
+        commit.type === "revert" ||
+        commit.revert ||
+        commit.message.startsWith("Revert ")
+      ) {
         commit.type = "Reverts";
       } else if (commit.type === "docs") {
         commit.type = "Documentation";
@@ -50,6 +54,16 @@ function getWriterOpts() {
         commit.type = "Build System";
       } else if (commit.type === "ci") {
         commit.type = "Continuous Integration";
+      } else if (commit.type === "chore") {
+        commit.type = "Chores";
+      } else if (
+        commit.type === "merge" ||
+        commit.merge ||
+        commit.message.startsWith("Merge ")
+      ) {
+        commit.type = "Merges";
+      } else {
+        return;
       }
 
       if (commit.scope === "*") {
