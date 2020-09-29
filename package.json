@@ -4,11 +4,12 @@
   "description": "A conventional-changelog preset for efficient and descriptive release notes",
   "main": "index.js",
   "scripts": {
-    "test-windows": "mocha --timeout 30000"
+    "test-windows": "mocha --timeout 30000",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/regalstreak/conventional-release-notes.git"
+    "url": "https://github.com/regalstreak/conventional-release-notes.git"
   },
   "keywords": [
     "conventional-changelog",
@@ -42,5 +43,8 @@
   "directories": {
     "test": "test"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "conventional-changelog-conventionalcommits": "^4.4.0",
+    "semantic-release": "^17.1.2"
+  }
 }
