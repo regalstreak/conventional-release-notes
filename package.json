@@ -1,6 +1,6 @@
 {
   "name": "@regalstreak/conventional-release-notes",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A conventional-changelog preset for efficient and descriptive release notes",
   "main": "index.js",
   "scripts": {
